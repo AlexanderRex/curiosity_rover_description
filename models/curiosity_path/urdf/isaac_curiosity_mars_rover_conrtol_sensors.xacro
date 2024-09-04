@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <ros2_control name="IsaacSystem" type="system">
+
+    <!-- Topic based control plugin-->
+    <hardware>
+        <plugin>topic_based_ros2_control/TopicBasedSystem</plugin>
+        <param name="joint_commands_topic">/curiosity_mars_rover/joint_command</param>
+        <param name="joint_states_topic">/curiosity_mars_rover/joint_states</param>
+        <param name="sum_wrapped_joint_states">true</param>
+    </hardware>
+
+    <!-- Arm Joints Interfaces-->
+    <joint name="arm_01_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <joint name="arm_02_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <joint name="arm_03_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <joint name="arm_04_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <joint name="arm_tools_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <!-- Mast Joints Interfaces-->
+    <joint name="mast_p_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <joint name="mast_02_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <joint name="mast_cameras_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <!-- Wheel Joints Interfaces-->
+    <joint name="front_wheel_L_joint">
+        <command_interface name="velocity" />
+        <state_interface name="position" />                    
+    </joint>
+    <joint name="middle_wheel_L_joint">
+        <command_interface name="velocity" />
+        <state_interface name="position" />          
+    </joint>
+    <joint name="back_wheel_L_joint">
+        <command_interface name="velocity" />
+        <state_interface name="position" />          
+    </joint>
+    <joint name="front_wheel_R_joint">
+        <command_interface name="velocity" />
+        <state_interface name="position" />                    
+    </joint>
+    <joint name="middle_wheel_R_joint">
+        <command_interface name="velocity" />
+        <state_interface name="position" />                    
+    </joint>
+    <joint name="back_wheel_R_joint">
+        <command_interface name="velocity" />
+        <state_interface name="position" />          
+    </joint>
+    <!-- Steering Joints Interfaces-->
+    <joint name="suspension_steer_F_L_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <joint name="suspension_steer_B_L_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <joint name="suspension_steer_F_R_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <joint name="suspension_steer_B_R_joint">
+        <command_interface name="position" />
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+    </joint>
+    <!-- Suspension Arms Interfaces-->
+    <joint name="suspension_arm_F_L_joint">
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+    </joint>
+    <joint name="suspension_arm_B_L_joint">
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+    </joint>
+    <joint name="suspension_arm_F_R_joint">
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+    </joint>
+    <joint name="suspension_arm_B_R_joint">
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+    </joint>
+
+    <!-- Passive joints - No command interface -->      
+    <joint name="suspension_arm_B2_L_joint">
+        <state_interface name="position"/>
+    </joint>
+
+    <joint name="suspension_arm_B2_R_joint">
+        <state_interface name="position"/>
+    </joint>
+      
+  </ros2_control>
+
+</robot>
